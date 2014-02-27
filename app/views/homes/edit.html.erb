@@ -1,0 +1,67 @@
+<h1>Editing Home #<%= @home.id %></h1>
+
+<%= form_tag(home_url(@home), method: 'patch') do %>
+  <div>
+    <%= label_tag :idcnum %><br />
+    <%= number_field_tag :idcnum, @home.idcnum %>
+  </div>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @home.name %>
+  </div>
+
+  <div>
+    <%= label_tag :address %><br />
+    <%= text_field_tag :address, @home.address %>
+  </div>
+
+  <div>
+    <%= label_tag :city %><br />
+    <%= text_field_tag :city, @home.city %>
+  </div>
+
+  <div>
+    <%= label_tag :state %><br />
+    <%= text_field_tag :state, @home.state %>
+  </div>
+
+  <div>
+    <%= label_tag :zip %><br />
+    <%= number_field_tag :zip, @home.zip %>
+  </div>
+
+  <div>
+    <%= label_tag :type %><br />
+    <%= text_field_tag :type, @home.hometype %>
+  </div>
+
+  <div>
+    <%= label_tag :lot %><br />
+    <%= number_field_tag :lot, @home.lot %>
+  </div>
+
+  <div>
+    <%= label_tag :sqft %><br />
+    <%= number_field_tag :sqft, @home.sqft %>
+  </div>
+
+  <div>
+    <%= label_tag :bath %><br />
+    <%= text_field_tag :bath, @home.bath %>
+  </div>
+
+  <div>
+    <%= label_tag :bed %><br />
+    <%= text_field_tag :bed, @home.bed %>
+  </div>
+
+  <div>
+    <%= label_tag :total %><br />
+    <%= text_field_tag :total, @home.total %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Home" %>
+  </div>
+<% end %>

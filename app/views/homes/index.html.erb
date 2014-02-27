@@ -1,0 +1,54 @@
+<h1>Homes</h1>
+
+<p>
+  Download:
+  <%= link_to "CSV", homes_path(format: "csv") %>
+  <%= link_to "Excel", homes_path(format: "xls") %>
+
+</p>
+
+<p><%= link_to 'Add a New Home', new_home_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idcnum</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Type</th>
+      <th>Lot</th>
+      <th>Sqft</th>
+      <th>Bath</th>
+      <th>Bed</th>
+      <th>Total</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @homes.each do |home| %>
+    <tr>
+      <td><%= home.idcnum %></td>
+      <td><%= home.name %></td>
+      <td><%= home.address %></td>
+      <td><%= home.city %></td>
+      <td><%= home.state %></td>
+      <td><%= home.zip %></td>
+      <td><%= home.hometype %></td>
+      <td><%= home.lot %></td>
+      <td><%= home.sqft %></td>
+      <td><%= home.bath %></td>
+      <td><%= home.bed %></td>
+      <td><%= home.total %></td>
+      <td><%= link_to 'Show', home_url(home) %></td>
+      <td><%= link_to 'Edit', edit_home_url(home) %></td>
+      <td><%= link_to 'Destroy', home_url(home), method: 'delete', data: { confirm: "Do you really want to delete this home?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
